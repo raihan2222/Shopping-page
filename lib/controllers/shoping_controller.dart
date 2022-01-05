@@ -4,15 +4,14 @@ import 'package:get/get.dart';
 class ShopingController extends GetxController {
   var products = <Product>[].obs;
 
-  @override
   void oninit() {
     super.onInit();
     fetchProduct();
   }
 
   void fetchProduct() async {
-    await Future.delayed(Duration(seconds: 1));
-    var productResult = [
+    await Future.delayed(const Duration(seconds: 1));
+    List<Product> productResult = [
       Product(
         id: 1,
         desc: "This is letest verson",

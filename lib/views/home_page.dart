@@ -37,15 +37,14 @@ class HomePage extends StatelessWidget {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        '${controller.products[index].name}',
-                                        style: TextStyle(fontSize: 24),
+                                        controller.products[index].name,
+                                        style: const TextStyle(fontSize: 24),
                                       ),
-                                      Text(
-                                          '${controller.products[index].desc}'),
+                                      Text(controller.products[index].desc),
                                     ],
                                   ),
                                   Text('\$${controller.products[index].price}',
-                                      style: TextStyle(fontSize: 24)),
+                                      style: const TextStyle(fontSize: 24)),
                                 ],
                               ),
                               // RaisedButton(
@@ -60,8 +59,8 @@ class HomePage extends StatelessWidget {
                               Obx(() => IconButton(
                                     icon: controller
                                             .products[index].isFavorite.value
-                                        ? Icon(Icons.check_box_rounded)
-                                        : Icon(Icons
+                                        ? const Icon(Icons.check_box_rounded)
+                                        : const Icon(Icons
                                             .check_box_outline_blank_outlined),
                                     onPressed: () {
                                       controller.products[index].isFavorite
@@ -80,27 +79,27 @@ class HomePage extends StatelessWidget {
             GetX<CartController>(builder: (controller) {
               return Text(
                 'Total amount: \$ ${controller.totalPrice}',
-                style: TextStyle(fontSize: 32, color: Colors.white),
+                style: const TextStyle(fontSize: 32, color: Colors.white),
               );
             }),
-            SizedBox(height: 100),
+            const SizedBox(height: 100),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {},
-        backgroundColor: Colors.amber,
-        icon: Icon(
-          Icons.add_shopping_cart_rounded,
-          color: Colors.black,
-        ),
-        label: GetX<CartController>(builder: (controller) {
-          return Text(
-            controller.count.toString(),
-            style: TextStyle(color: Colors.black, fontSize: 24),
-          );
-        }),
-      ),
+      // floatingActionButton: FloatingActionButton.extended(
+      //   onPressed: () {},
+      //   backgroundColor: Colors.amber,
+      //   icon: const Icon(
+      //     Icons.add_shopping_cart_rounded,
+      //     color: Colors.black,
+      //   ),
+      //   label: GetX<CartController>(builder: (controller) {
+      //     return Text(
+      //       controller.count.toString(),
+      //       style: const TextStyle(color: Colors.black, fontSize: 24),
+      //     );
+      //   }),
+      // ),
     );
   }
 }
